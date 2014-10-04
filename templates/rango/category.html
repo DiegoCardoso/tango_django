@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1">
+	<title>Rango</title>
+	<link rel="stylesheet" href="https://developers.google.com/web/css/styles.min.css">
+</head>
+<body>
+	<h1> {{ category_name }} </h1>
+
+	{% if category %}
+		{% if pages %}
+			<ul>
+				{% for page in pages %}
+					<li>
+						<a href="{{ page.url }}"> {{ page.title }} </a>
+					</li>
+				{% endfor %}
+			</ul>
+		{% else %}
+			<strong>No pages currently in this category.</strong>		
+		{% endif %}
+	{% else %}
+		<strong>
+			The specified category '{{ category_name }}' does not exist.
+		</strong>
+	{% endif %}
+	<h3>
+		<a href="/rango/">back</a>		
+	</h3>
+</body>
+</html>

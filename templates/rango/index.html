@@ -1,0 +1,49 @@
+<!DOCTYPE <!DOCTYPE html>
+{% load static %}
+
+<html>
+<head>
+	<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1">
+	<title>Rango</title>
+	<link rel="stylesheet" href="https://developers.google.com/web/css/styles.min.css">
+</head>
+<body>
+	<h1>Rango says...</h1>
+
+	{% if categories %}
+		<h3>Categories</h3>
+		<ul>
+			{% for category in categories %}
+				<li> 
+					<a href="category/{{ category.url }}">{{ category.name }}</a>
+				</li>
+			{% endfor %}
+		</ul>
+	{% else %}
+		<strong>There are no categories present.</strong>
+	{% endif %}
+	
+	{% if pages %}
+		<h3>Pages</h3>
+
+		<ul>
+			{% for page in pages %}
+				<li>
+					<a href="{{ page.url }}">
+						{{ page.title }}
+					</a>
+				</li>
+			{% endfor %}
+		</ul>
+	{% else %}
+		<strong>There are no pages present.</strong>
+	{% endif %}
+	
+	
+
+<a href="/rango/about">About</a>
+
+<img src="{% static "rango.jpg" %}" alt="">
+
+</body>
+</html>
