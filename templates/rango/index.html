@@ -9,9 +9,10 @@
 </head>
 <body>
 	<h1>Rango says...</h1>
-
+	
 	{% if categories %}
 		<h3>Categories</h3>
+		<a href="/rango/add_category">Add category</a>
 		<ul>
 			{% for category in categories %}
 				<li> 
@@ -43,7 +44,7 @@
 
 <a href="/rango/about">About</a>
 
-<img src="{% static "rango.jpg" %}" alt="">
+<img src="{% static "rango.jpg" %}" alt="" style="width:100%">
 
 </body>
 </html>
